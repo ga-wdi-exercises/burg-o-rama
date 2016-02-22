@@ -5,7 +5,7 @@ We'll be using ejs to build our dynamic views on the server.
 
 1. Install the ejs template engine: `npm install ejs --save`
 1. Create a new folder at the root called `views`
-	1. Create two subfolders: `views/partials` and `views/pages`
+  1. Create two subfolders: `views/partials` and `views/pages`
 1. Note that we don't have to require ejs as a package, we just need to `app.use` it in server.js. Also, ejs will automatically look for a folder called `views` for the templates:
 
 ```javascript
@@ -32,7 +32,7 @@ At this point, it will be incredibly helpful to stop and create a table to keep 
 Use the `example_resources/example_template.html` to build your ejs templates. 
 
 1. mkdir `public/css` to hold our public styles 
-	1. copy `example_resources/css/styles.css` into this folder
+  1. copy `example_resources/css/styles.css` into this folder
 1. Touch `views/pages/home.ejs`, and copy/paste the file contents of the `example_template.html` into this new file.
 1. Update your `/` route to serve this file 
 ```javascript
@@ -99,5 +99,4 @@ Finish building your views from the worksheet table above.
 
 1. Use dynamic data to display data for each route. 
 1. Check the `example_resources` for snippets of helpful code.
-
 
