@@ -11,13 +11,13 @@ Now that we know how to model and build a database, we can now refactor our appl
 1. As above, build a RESTful `/toppings/` resource.
 1. As above, build a RESTful `/buns/` resource.
 1. As above, build a RESTful `/meats/` resource.
-1. Create another 
 
 ###Bonus
 1. Build a `Customer` table and RESTful resource.
 
 ## Tying it all together
 Now that we have our resources, let's use them. 
+
 1. Refactor the newBurger  and editBurger route. Your form should now be built dynamically and should include a drop-down for each additional resource (e.g. the cheese selection should be a live selection of cheeses from the `cheese` table; likewise for meats, temps, toppings)
 1. Update the form to only submit the resource IDs, and not their names. These vals will be the Foreign Keys stored on the Burger table.
 1. Additionally, for a one-to-many or many-to-many relationship, you'll need a sub-routine separately insert the data on the 'many' side.
