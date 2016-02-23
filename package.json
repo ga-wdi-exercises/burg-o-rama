@@ -10,8 +10,10 @@
   "author": "Patrick M",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.0",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
+    "method-override": "^2.3.5",
     "morgan": "^1.7.0",
     "path": "^0.12.7",
     "request": "^2.69.0"
