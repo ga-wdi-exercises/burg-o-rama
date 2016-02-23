@@ -5,7 +5,7 @@ var express = require('express');
 var logger = require('morgan');
 var path = require('path');
 
-var ejs = require('ejs');
+// var ejs = require('ejs'); apparently we do not need to require this.
 var request = require('request');
 
 var bodyParser = require('body-parser');
@@ -35,6 +35,10 @@ app.use( logger( 'dev' ) );
 //view engine
 app.set( 'view engine', 'ejs' );
 
+//static route to public
+//this sets a folder called public to be the destination from which any static assets(images, css, etc) will be served.
+app.use( express.static( path.join ( __dirname, 'public') ) );
+
 // server functioning diagnostic
 app.listen( port, () => {
   console.log('The server is up and running, on port ' + port + ' better go catch it!')
@@ -42,7 +46,8 @@ app.listen( port, () => {
 });
 
 app.get( '/', (req,res) => {
-  res.render('pages/index.html.ejs');
+  // res.render('pages/index.html.ejs');
+  res.render('pages/home.html.ejs');
 })
 
 app.use( '/burgers', burgerRoutes );
