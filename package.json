@@ -1,0 +1,30 @@
+{
+  "name": "burg-o-rama",
+  "version": "1.0.0",
+  "description": "![Bob's burgers](http://www.themarysue.com/wp-content/uploads/2014/10/bobsburgers.jpg)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AuvEmma/burg-o-rama.git"
+  },
+  "author": "Emma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AuvEmma/burg-o-rama/issues"
+  },
+  "homepage": "https://github.com/AuvEmma/burg-o-rama#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "method-override": "^2.3.5",
+    "morgan": "^1.7.0",
+    "path": "^0.12.7",
+    "pg": "^4.4.6",
+    "serve-favicon": "^2.3.0"
+  }
+}

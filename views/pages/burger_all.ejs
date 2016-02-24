@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ../partials/head %>
+  </head>
+​
+  <body>
+​
+    <header>
+      <%- include ../partials/nav %>
+    </header>
+​
+    <div class="container">
+​
+      <div class="starter-template">
+        <h1>Show all burgers</h1>
+        
+        <div class="wrapper">
+          <ol>
+          <% for(var i = 0; i < data.length; i++) { %>
+            
+              <li><%= data[i].name %></li>
+<!--               <li><%= data[i].meat %></li>
+              <li><%= data[i].temperature %></li>
+              <li><%= data[i].cheese %></li>  -->
+            
+          <% } %>
+          </ol>
+        </div>
+      </div>
+​
+    </div><!-- /.container -->
+​
+​
+    <%- include ../partials/footer %>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ../partials/head %>
+  </head>
+​
+  <body>
+​
+    <header>
+      <%- include ../partials/nav %>
+    </header>
+​
+    <div class="container">
+​
+      <div class="starter-template">
+        <h1>Burger Profile</h1>
+        
+        <h3><%= burgerData.name %></h3>
+        <form method="POST" action="<%=burgerURL + '?_method=DELETE' %>">
+        <a href="<%=burgerURL + '/edit'%>" class="btn btn-info" role="button">Edit</a>
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
+  
+
+      </div>
+​
+    </div><!-- /.container -->
+​
+​
+    <%- include ../partials/footer %>
+  </body>
+</html>
