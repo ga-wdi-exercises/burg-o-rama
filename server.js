@@ -47,7 +47,8 @@ app.listen( port, () => {
 
 app.get( '/', (req,res) => {
   // res.render('pages/index.html.ejs');
-  res.render('pages/home.html.ejs');
+  // var pageTitle = 'Home Page';
+  res.render('pages/home.html.ejs' );
 })
 
 app.use( '/burgers', burgerRoutes );
