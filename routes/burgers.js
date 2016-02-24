@@ -21,7 +21,9 @@ burgers.route('/')
 // /burgers/new : to view the 'new burger' form.
 burgers.route('/new')
   .get( (req,res) => {
-    res.send('/burgers/new done got');
+    res.render('pages/burgerEdit.html.ejs', {
+      burgerName: '',
+    })
   })
   .post( (req,res) => {
     res.send('/burgers/new gone postal');
