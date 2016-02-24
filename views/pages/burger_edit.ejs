@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ../partials/head %>
+  </head>
+
+  <body>
+    <header>
+      <%- include ../partials/nav %>
+    </header>
+    <main>
+      
+    
+    <div class="container">
+
+      <div class="starter-template">
+        <h1><%= burgerForm.title %></h1>
+        <p class="lead">Use this form to build a burger.</p>
+        <form class="form-horizontal" action="<%= burgerForm.burgerURL %>" method="<%= burgerForm.submitMethod %>">
+        <fieldset>
+
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="name">Burger Name</label>  
+          <div class="col-md-6">
+          <input id="name" name="name" type="text" placeholder="placeholder" class="form-control input-md" required="">
+          <span class="help-block">Please name your burger</span>  
+          </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="meat">Meat</label>
+          <div class="col-md-6">
+            <select id="meat" name="meat" class="form-control">
+              <option value="1">Bœuf</option>
+              <option value="2">Chicken</option>
+              <option value="3">Ostrich</option>
+              <option value="4">Bison</option>
+              <option value="5">Pork</option>
+              <option value="6">Vegan</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="temperature">Meat Temperature</label>
+          <div class="col-md-6">
+            <select id="temperature" name="temperature" class="form-control">
+              <option value="1">Rare</option>
+              <option value="2">Medium-Rare</option>
+              <option value="3">Medium</option>
+              <option value="4">Medium-Well</option>
+              <option value="5">Well-Done</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="cheese">Cheese</label>
+          <div class="col-md-6">
+            <select id="cheese" name="cheese" class="form-control">
+              <option value="0">None</option>
+              <option value="1">American</option>
+              <option value="2">Swiss</option>
+              <option value="3">Gruyere</option>
+              <option value="4">Humboldt</option>
+              <option value="5">Mozzarella</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Multiple Checkboxes -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="extras">Extras</label>
+          <div class="col-md-4">
+          <div class="checkbox">
+            <label for="extras-0">
+              <input type="checkbox" name="extras" id="extras-0" value="1">
+              Bacon
+            </label>
+            <label for="extras-1">
+              <input type="checkbox" name="extras" id="extras-1" value="2">
+              Tomato
+            </label>
+            <label for="extras-2">
+              <input type="checkbox" name="extras" id="extras-2" value="3">
+              Pickles
+            </label>
+            <label for="extras-3">
+              <input type="checkbox" name="extras" id="extras-3" value="4">
+              Onions
+            </label>
+          </div>
+          </div>
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="submit">Submit</label>
+          <div class="col-md-4">
+            <button id="submit" type="submit" class="btn btn-lg btn-success">Burger Me!</button>
+          </div>
+        </div>
+
+        </fieldset>
+        </form>
+
+      </div>
+
+    </div><!-- /.container -->
+
+
+
+    </main>
+
+
+
+    <%- include ../partials/footer %>
+    
+  </body>
+</html>
