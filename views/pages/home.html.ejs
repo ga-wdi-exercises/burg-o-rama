@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ../partials/head.html.ejs %>
+  </head>
+  <body>
+
+    <header>
+      <%- include ../partials/nav.html.ejs %>
+    </header>
+    <div class="container">
+
+      <div class="starter-template">
+        
+        <h1>All The Burgers <a href="./new" class="btn btn-success" role="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add a Burger</a></h1>
+
+        <div class="wrapper">
+          <section class="col-md-6 col-md-offset-3">
+          <table class="table table-condensed text-left">
+            <tbody><tr>
+              <th>Burger Name</th>
+              <th>Meat</th>
+              <th>Cheese</th>
+              <th>Action</th>
+            </tr>
+
+
+            <tr>
+              <td><a href="1" class="lead">test</a></td>
+              <td><span class="lead">test</span></td>
+              <td><span class="lead">swiss</span></td>
+              <td>
+                <form method="POST" action="1?_method=DELETE">
+                <a href="1/edit" class="btn btn-sm btn-info" role="button">Edit</a>
+                  <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                </form>
+              </td>
+            </tr>
+
+
+          </tbody></table>
+        </section></div>
+      </div>
+
+    </div><!-- /.container -->
+     <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <footer>
+    <%- include ../partials/footer.html.ejs %>
+    </footer>
+</body></html>
