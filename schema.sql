@@ -50,6 +50,7 @@ create table toppings(
 
 create table orders(
   id serial primary key,
+  name text NOT NULL,
   meat INT REFERENCES meats,
   done text NOT NULL,
   bread INT REFERENCES breads,

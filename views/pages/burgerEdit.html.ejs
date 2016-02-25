@@ -11,191 +11,22 @@
 
 
 <div class="mainContainer">
-
   <div class="starter-template">
     <h1>Create your Dream Burger</h1>
     <p class="lead">Use this form to build a burger.</p>
     <form class="form-horizontal" action="/burgers/" method="post">
     <fieldset>
-
-
-    <!-- Text input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="name" value="<%= burgerName %>">Burger Name</label>
-      <div class="col-md-6">
-      <input id="name" name="name" type="text" placeholder="placeholder" class="form-control input-md" required="">
-      <span class="help-block">Please name your burger</span>
-      </div>
-    </div>
-
-    <!-- Select Basic -->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="meat">Meat</label>
-      <div class="col-md-6">
-        <select id="meat" name="meat" class="form-control">
-          <option value="">Pick a meat!</option>
-          <option value="bison">Bison</option>
-          <option value="28 aged brisket">Dry aged (28 days) brisket</option>
-          <option value="angus">Angus</option>
-          <option value="elk">Elk</option>
-          <option value="pork-belly">Pork Belly</option>
-          <option value="pulled pork">Pulled Pork</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Select Basic -->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="temperature">Meat Doneness</label>
-      <div class="col-md-6">
-        <select id="temperature" name="temperature" class="form-control">
-          <option value="">Pick a doneness!</option>
-          <option value="Rare">Rare</option>
-          <option value="Medium_Rare">Medium Rare</option>
-          <option value="Medium">Medium</option>
-
-        </select>
-      </div>
-    </div>
-
-    <!-- Select Basic -->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="temperature">Bun</label>
-      <div class="col-md-6">
-        <select id="bread" name="bread" class="form-control">
-          <option value="">Pick a bun!</option>
-          <option value="brioche">Brioche</option>
-          <option value="whole_wheat">Whole Wheat</option>
-          <option value="White_Sesame">White Sesame</option>
-          <option value="White">White Bun</option>
-          <option value="Focacchia">Focacchia</option>
-
-        </select>
-      </div>
-    </div>
-
-    <!-- Multiple Checkboxes -->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="cheeses">Did you say ... CHEEEEEEESE?</label>
-      <div class="col-md-4">
-      <div class="checkbox">
-        <label for="cheeses-0">
-          <input type="checkbox" name="cheeses" id="cheeses-0" value="muenster">
-          Muenster
-        </label>
-        <label for="cheeses-1">
-          <input type="checkbox" name="cheeses" id="cheeses-1" value="swiss">
-          Swiss
-        </label>
-        <label for="cheeses-2">
-          <input type="checkbox" name="cheeses" id="cheeses-2" value="blue">
-          Blue
-        </label>
-        <label for="cheeses-3">
-          <input type="checkbox" name="cheeses" id="cheeses-3" value="american">
-          American
-        </label>
-        <label for="cheeses-4">
-          <input type="checkbox" name="cheeses" id="cheeses-4" value="cheddar">
-          Cheddar
-        </label>
-        <label for="cheeses-5">
-          <input type="checkbox" name="cheeses" id="cheeses-5" value="queso_blanco">
-          Queso Blanco
-        </label>
-        <label for="cheeses-6">
-          <input type="checkbox" name="cheeses" id="cheeses-6" value="emmentaler">
-          Emmentaler
-        </label>
-      </div>
-      </div>
-    </div>
-
-    <!-- Multiple Checkboxes -->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="toppings">toppings</label>
-      <div class="col-md-4">
-      <div class="checkbox">
-        <label for="toppings-0">
-          <input type="checkbox" name="toppings" id="toppings-0" value="tomato">
-          Tomato
-        </label>
-        <label for="toppings-1">
-          <input type="checkbox" name="toppings" id="toppings-1" value="caramelized_onions">
-          Caramelized Onions
-        </label>
-        <label for="toppings-2">
-          <input type="checkbox" name="toppings" id="toppings-2" value="dijon">
-          Dijon
-        </label>
-        <label for="toppings-3">
-          <input type="checkbox" name="toppings" id="toppings-3" value="lettuce">
-          Lettuce
-        </label>
-        <label for="toppings-4">
-          <input type="checkbox" name="toppings" id="toppings-4" value="pickle">
-          Pickle
-        </label>
-        <label for="toppings-5">
-          <input type="checkbox" name="toppings" id="toppings-5" value="bacon">
-          Bacon
-        </label>
-        <label for="toppings-6">
-          <input type="checkbox" name="toppings" id="toppings-6" value="maple">
-          Maple
-        </label>
-        <label for="toppings-7">
-          <input type="checkbox" name="toppings" id="toppings-7" value="fried_egg">
-          Fried Egg
-        </label>
-        <label for="toppings-8">
-          <input type="checkbox" name="toppings" id="toppings-8" value="grilled_onions">
-          Grilled Onions
-        </label>
-        <label for="toppings-9">
-          <input type="checkbox" name="toppings" id="toppings-9" value="ketchup">
-          Ketchup
-        </label>
-        <label for="toppings-10">
-          <input type="checkbox" name="toppings" id="toppings-10" value="red_onion">
-          Red Onion
-        </label>
-        <label for="toppings-11">
-          <input type="checkbox" name="toppings" id="toppings-11" value="hash_brown">
-          Hash Brown
-        </label>
-        <label for="toppings-12">
-          <input type="checkbox" name="toppings" id="toppings-12" value="sunny_side_egg">
-          Sunny Side Egg
-        </label>
-        <label for="toppings-13">
-          <input type="checkbox" name="toppings" id="toppings-13" value="pickled_jalapenos">
-          Pickled Jalapenos
-        </label>
-        <label for="toppings-14">
-          <input type="checkbox" name="toppings" id="toppings-14" value="roasted_red_peppers">
-          Roasted Red Peppers
-        </label>
-        <label for="toppings-15">
-          <input type="checkbox" name="toppings" id="toppings-15" value="massaged_kale">
-          Massaged Kale
-        </label>
-      </div>
-      </div>
-    </div>
-
-    <!-- Button -->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="submit">Submit</label>
-      <div class="col-md-4">
-        <button id="submit" type="submit" class="btn btn-lg btn-success">Burger Me!</button>
-      </div>
-    </div>
+      <%- include ../partials/burger_name.html.ejs %>
+      <%- include ../partials/burger_meat.html.ejs %>
+      <%- include ../partials/burger_doneness.html.ejs %>
+      <%- include ../partials/burger_bun.html.ejs %>
+      <%- include ../partials/burger_cheeses.html.ejs %>
+      <%- include ../partials/burger_toppings.html.ejs %>
+      <%- include ../partials/burger_submit.html.ejs %>
 
     </fieldset>
     </form>
-
-  </div>
+    </div>
 
 </div>
 

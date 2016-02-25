@@ -2,7 +2,7 @@ var pg = require('pg');
 
 var connectionString ='postgres://Cthulu:' + process.env.DB_PASSWORD + '@localhost/burgorama';
 
-  function allOrders(req, res, next){
+module.exports.allBurgers(req, res, next){
     console.log('allBurgers called');
 	  pg.connect(connectionString, function(err, client, done) {
 	    if(err) {
@@ -17,7 +17,7 @@ var connectionString ='postgres://Cthulu:' + process.env.DB_PASSWORD + '@localho
 	      }
 	      res.rows = result.rows;
 	      next()
-	    });
+	    }); //may need to select from cheeses/toppings to get this to show correctly.
       // console.log(query);
       // console.log('above was query');
       // console.log(client.query()); //seems to break the program
@@ -27,15 +27,21 @@ var connectionString ='postgres://Cthulu:' + process.env.DB_PASSWORD + '@localho
 	  console.log('allBurgers ran');
 	}
 
-  function addBurger(req, res, next){
-      console.log('addBurger called');
+//param names:
+// burgName, meat, done, bread, cheeses, toppings
+
+  function editBurger(req, res, next){
+      console.log('editBurger called');
   	  pg.connect(connectionString, function(err, client, done) {
   	    if(err) {
   	      done()
   	      console.log(err)
   	      return res.status(500).json({success: false, data: err})
   	    }
-  	    var queryOrders = client.query('INSERT INTO orders (STUFF) VALUES (MONEY)' [req.body.STUFF], //insert orders
+        console.log(req.body);
+        console.log('was req.body at non-error editBurger call');
+        //peter seems to have an update SQL call here, going to try and skip that until it becomes obvious why it's actually super necessary.
+  	    var queryOrders = client.query('INSERT INTO orders (name, meat, done, bread) VALUES ($1,$2,$3,$4)' [req.body.burgName, req.body.meat, req.body.done, req.body.bread], //insert orders
          function(err, result) {
   	      done()
   	      if (err) {
@@ -43,24 +49,32 @@ var connectionString ='postgres://Cthulu:' + process.env.DB_PASSWORD + '@localho
   	      }
   	      next()
   	    });
-  	    var queryMeats = client.query('INSERT INTO meats (STUFF) VALUES (MONEY)' [req.body.STUFF], //insert meats should this be orders join meats?
-         function(err, result) {
-  	      done()
-  	      if (err) {
-  	        return console.error('error running insert queryMeats', err);
-  	      }
-  	      next()
-  	    });
-        var queryCheeses = client.query('INSERT INTO cheeses (STUFF) VALUES (MONEY)' [req.body.STUFF],
-        //insert cheeses should this be orders join cheeses?
-         function(err, result) {
-  	      done()
-  	      if (err) {
-  	        return console.error('error running insert queryCheeses', err);
-  	      }
-  	      next()
-  	    });
-        var queryToppings = client.query('INSERT INTO toppings (STUFF) VALUES (MONEY)' [req.body.STUFF],
+  	    // var queryMeats = client.query('INSERT INTO meats (STUFF) VALUES (MONEY)' [req.body.STUFF], //insert meats should this be orders join meats?
+        //  function(err, result) {
+  	    //   done()
+  	    //   if (err) {
+  	    //     return console.error('error running insert queryMeats', err);
+  	    //   }
+  	    //   next()
+  	    // });
+        console.log(req.params.id);
+        console.log('that was req.params.id just before queryCheeses');
+
+        client.query('DELETE FROM ordersJoinCheeses WHERE order_id = $1', [req.params.id], (err, result) => { //so that you don't have 2x cheeses if they are present both before and after edit. not entirely sure that req.params.id will return what i think it does. CONSOLE LOG // UPDATE?
+        req.body.cheeses.forEach( (cheeses, index) => {
+          var queryCheeses = client.query('INSERT INTO ordersJoinCheeses (order_id, cheese_id) VALUES ($1, $2)' [req.params.id, req.body.cheeses],
+          //insert ordersJoinCheeses.
+           function(err, result) {
+    	      done()
+    	      if (err) {
+    	        return console.error('error running insert queryCheeses', err);
+    	      }
+    	      next()
+    	    });
+        })
+        })
+
+        var queryToppings = client.query('INSERT INTO ordersJoinToppings (order_id, topping_id) VALUES (MONEY)' [req.body.STUFF],
         //insert toppings should this be orders join toppings?
         function(err, result) {
   	      done()
@@ -70,5 +84,5 @@ var connectionString ='postgres://Cthulu:' + process.env.DB_PASSWORD + '@localho
   	      next()
   	    });
   	  });
-      console.log('addBurger ran');
+      console.log('editBurger ran');
   	}

@@ -42,8 +42,8 @@ INSERT INTO toppings (name, available) VALUES
 ('roasted_red_peppers', true),
 ('massaged_kale', true);
 
-INSERT INTO orders (meat, done, bread) VALUES
-(1, 'medium-rare', 1);
+INSERT INTO orders (name, meat, done, bread) VALUES
+('wacly', 1, 'medium-rare', 1);
 -- ('28 aged brisket', well-done, whole_wheat, swiss+blue, lettuce+tomato+pickle),
 -- (angus, medium, white_sesame, american, bacon+maple+fried_egg+grilled_onions+ketchup),
 -- (elk, rare, brioche, swiss+cheddar, tomato+red_onion+ketchup),
