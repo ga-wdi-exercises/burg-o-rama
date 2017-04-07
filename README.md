@@ -4,7 +4,7 @@
 *A multi-day code-a-long to build a fully-functional CRUD application.*
 
 
-###Technologies used and concepts covered
+### Technologies used and concepts covered
 
 - Node.js / Express.js
 - RESTful routing
@@ -15,7 +15,7 @@
 - RDBMS relations (SQL joins)
 
 
-##System Description
+## System Description
 The application will allow the user to order a burger. 
 
 The burger order form will allow the selection of bun, meat temperature, cheese, and toppings.
@@ -36,7 +36,7 @@ Additionally, this application can be used as a starting point to build location
 1. As an Admin, I should be able to edit the collection of topping offerings.
 1. As an Admin, I should be able to edit the meat temperature offerings.
 
-###System Requirements
+### System Requirements
 1. The application must be RESTful and follow REST-style standards. [REST on Wikipedia…](https://en.wikipedia.org/wiki/Representational_state_transfer)
 1. The application must use EJS to render views. 
 1. The system must be able to support mutliple user-types, however, v1 may simulate this feature by allowing all users to execute all functions. 
@@ -44,5 +44,5 @@ Additionally, this application can be used as a starting point to build location
 	1. The data stored must be relational and held in multiple tables, accessed via a SQL join. 
 	1. updates to collections must also save the proper data in the appropriate tables. 
 
-#Code-Along
+# Code-Along
 _See exercise1.md for instructions
